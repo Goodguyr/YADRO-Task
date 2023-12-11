@@ -5,7 +5,6 @@ Implementation of a test task for YADRO software engineer position
 ## Task:
 
 The Tape data storage device is designed to write and read data sequentially. The read-write magnetic head is stationary during reading and writing, while the tape has the ability to move in both directions. Information can be written and read to the tape cell on which the magnetic head is currently located. Moving the tape is a time-consuming operation - the tape is not designed for arbitrary access. There is an input tape of length N (where N is large) containing elements of type integer (2^32). There is an output tape of the same length. It is necessary to write into the output tape the elements sorted in ascending order from the input tape. There is a limitation on RAM usage - no more than M bytes (M may be < N, i.e. you cannot load all the data from the tape into RAM). To implement the algorithm, you can use a reasonable number of temporary tapes, i.e. tapes where you can store some temporary information needed during the algorithm's operation.
-It is necessary to create a C++ project compiled into a console application that implements a algorithm of sorting data from the input tape to the output tape.
 
 You need to create a C++ project compiled into a console application that implements an algorithm for sorting data from the input tape to the output tape. The following needs to be done:
 

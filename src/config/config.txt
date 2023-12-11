@@ -1,0 +1,5 @@
+ReadTime=50
+WriteTime=100
+ShiftTime=200
+RewindTime=500
+RAM=100

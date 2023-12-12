@@ -8,7 +8,7 @@ struct Configuration {
   int writeTime = 0;
   int shiftTime = 0;
   int rewindTime = 0;
-  int RAM = 0;
+  int RAM = 100;
   int tapeSize = 0;
 };
 

@@ -10,7 +10,7 @@
 
 enum TapeType {
   inTape = std::ios::in | std::ios::binary,
-  outTape = std::ios::out | std::ios::binary,
+  outTape = std::ios::in | std::ios::out | std::ios::binary | std::ios::trunc,
 };
 
 class FileTape : public Tape {

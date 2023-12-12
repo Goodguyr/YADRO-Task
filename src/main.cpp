@@ -12,8 +12,8 @@ int main(int argc, char* argv[]) {
   parseCmdArgs(argc, argv, inputFileName, outputFileName);
   Configuration config = parseConfigFromFile("config/config.txt");
 
-  FileTape readTape(inputFileName, inTape, config);
-  FileTape writeTape(outputFileName, outTape, config);
+  auto readTape = std::make_shared<FileTape>(inputFileName, inTape, config);
+  auto writeTape = std::make_shared<FileTape>(outputFileName, outTape, config);
   SortingAlgorithm sorter(readTape, writeTape, config);
   return 0;
 }

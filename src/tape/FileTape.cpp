@@ -8,7 +8,6 @@ FileTape::FileTape(const std::string &filename, const TapeType &type,
     throw std::runtime_error("Unable to open file: " + filename);
   }
   tapeSize = file.seekg(0, std::ios::end).tellg() / sizeof(int32_t);
-  // std::cout << "Tape size = " + std::to_string(tapeSize) << std::endl;
 }
 
 FileTape::~FileTape() { file.close(); }

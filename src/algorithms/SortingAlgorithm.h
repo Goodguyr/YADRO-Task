@@ -14,8 +14,9 @@ class SortingAlgorithm {
   std::vector<int> ram;
   const std::string fileFolder = "tmp";
   Configuration config;
-  FileTape &in;
-  FileTape &out;
+  std::shared_ptr<FileTape> in;
+  std::shared_ptr<FileTape> out;
+  std::vector<std::shared_ptr<FileTape>> tmpTapeStorage;
 
   void sort();
   void merge();
@@ -23,7 +24,8 @@ class SortingAlgorithm {
   void ramToTmp();
 
  public:
-  SortingAlgorithm(FileTape &in, FileTape &out, Configuration &config);
+  SortingAlgorithm(std::shared_ptr<FileTape> in, std::shared_ptr<FileTape> out,
+                   Configuration &config);
   ~SortingAlgorithm();
 };
 

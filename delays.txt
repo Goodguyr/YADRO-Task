@@ -1,0 +1,3 @@
+ioDelay=0
+shiftDelay=0
+rewindDelay=0

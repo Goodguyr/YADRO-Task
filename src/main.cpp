@@ -1,19 +1,23 @@
 #include <cstdlib>
 #include <filesystem>
 #include <iostream>
+#include <memory>
+#include <vector>
 
-#include "algorithms/SortingAlgorithm.h"
-#include "config/Config_Parser.h"
-#include "tape/FileTape.h"
+#include "Setup.h"
+#include "Tape.h"
 
-int main(int argc, char* argv[]) {
-  std::string inputFileName = "input.txt";
-  std::string outputFileName = "output.txt";
-  parseCmdArgs(argc, argv, inputFileName, outputFileName);
-  Configuration config = parseConfigFromFile("config/config.txt");
+int main(int argc, char* argv[])
+{
+	std::string inFile, outFile;
+	Setup params(argc, argv, inFile, outFile);
 
-  auto readTape = std::make_shared<FileTape>(inputFileName, inTape, config);
-  auto writeTape = std::make_shared<FileTape>(outputFileName, outTape, config);
-  SortingAlgorithm sorter(readTape, writeTape, config);
-  return 0;
+	auto inTape = std::make_unique<Tape>(inFile);
+	auto outTape = std::make_unique<Tape>(outFile);
+
+	// first we read input file and make Size / ram chunks
+	// than we do merge sort on sorted chunks
+
+	// ram / 2 == max Concur
+	return 0;
 }

@@ -1,0 +1,37 @@
+# Build directories
+build/
+
+# Conan files
+conanbuildinfo.cmake
+conaninfo.txt
+graph_info.json
+conan.lock
+
+# CMake build-related files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Compiled files
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.exe
+*.out
+
+# Temporary and log files
+*.log
+*.tmp
+
+
+# Cmake presets
+*.json

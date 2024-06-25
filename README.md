@@ -1,16 +1,59 @@
 # YADRO-Task
 
-Fun task))
+# Definition
+Тестовое задание
+Устройство хранения данных типа лента (Tape) предназначено для последовательной записи и
+чтения данных. Считывающая/записывающая магнитная головка неподвижна во время чтения и
+записи, а лента имеет возможность двигаться в обоих направлениях. Запись и чтение информации
+возможны в ячейку ленты, на которой в данный момент находится магнитная головка.
+Перемещения ленты – затратная по времени операция – лента не предназначена для
+произвольного доступа.
+Имеется входная лента длины N (где N – велико), содержащая элементы типа integer (2
+32).
+Имеется выходная лента такой же длины. Необходимо записать в выходную ленту
+отсортированные по возрастанию элементы с входной ленты. Есть ограничение по использованию
+оперативной памяти – не более M байт (M может быть < N, т.е. загрузить все данные с ленты в
+оперативную память не получится). 
+Для реализации алгоритма можно использовать разумное
+количество временных лент, т.е. лент, на которых можно хранить какую-то временную
+информацию, необходимую в процессе работы алгоритма.
+Необходимо создать проект С++, компилируемый в консольное приложение, которое реализует
+алгоритм сортировки данных с входной ленты на выходную. Необходимо сделать следующее:
+• Определить интерфейс для работы с устройством типа лента.
+• Написать класс, реализующий этот интерфейс и эмулирующий работу с лентой
+посредством обычного файла. Должно быть возможно сконфигурировать (без
+перекомпиляции – например, через внешний конфигурационный файл, который будет
+прочитан на старте приложения) задержки по записи/чтению элемента с ленты, перемотки
+ленты, и сдвига ленты на одну позицию.
+• Файлы временных лент можно сохранять в директорию tmp.
+• Написать класс, реализующий алгоритм сортировки данных с входной ленты на выходную.
+• Консольное приложение должно принимать на вход имя входного и выходного файлов и
+производить сортировку.
+• Желательно написать юнит-тесты.
 
-## Task:
 
-The Tape data storage device is designed to write and read data sequentially. The read-write magnetic head is stationary during reading and writing, while the tape has the ability to move in both directions. Information can be written and read to the tape cell on which the magnetic head is currently located. Moving the tape is a time-consuming operation - the tape is not designed for arbitrary access. There is an input tape of length N (where N is large) containing elements of type integer (2^32). There is an output tape of the same length. It is necessary to write into the output tape the elements sorted in ascending order from the input tape. There is a limitation on RAM usage - no more than M bytes (M may be < N, i.e. you cannot load all the data from the tape into RAM). To implement the algorithm, you can use a reasonable number of temporary tapes, i.e. tapes where you can store some temporary information needed during the algorithm's operation.
+# Requirements
+We are given an input tape and we have to sort it to an output tape.
 
-You need to create a C++ project compiled into a console application that implements an algorithm for sorting data from the input tape to the output tape. The following needs to be done:
+## Tape Interface
+Tape is a sequential access structure which allows:
+- Rewind
+- Shift to either direction
+- IO operations (read/write)
 
-- Define an interface to work with a tape type device.
-- Write a class that implements this interface and emulates working with the tape by means of a regular file. It should be possible to configure (without recompilation - for example, via an external configuration file that will be read at the start of the application). Delays for writing/reading an item from tape, rewinding tape, and shifting the tape by one position.
-- Temporary tape files can be saved to the tmp directory.
-- Write a class that implements an algorithm for sorting data from an input tape to an output tape.
-- The console application should take as input the name of the input and output files and perform sorting.
-- It is desirable to write unit tests.
+Interface is a wrapper for sequential access to a file
+
+## Algorithm singleton class
+- Should take in 2 tapes and sort them to an output tape
+
+## Param reader
+- Should read params on launch
+- read time delay params if they are available
+
+## Tests
+- Unit test all interfaces
+
+
+# Instructions
+pip install conan
+conan install . --build=missing

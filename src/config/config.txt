@@ -1,5 +1,0 @@
-ReadTime=0
-WriteTime=0
-ShiftTime=0
-RewindTime=0
-RAM=100

@@ -1,0 +1,9 @@
+BasedOnStyle: Google
+IndentWidth: 4
+TabWidth: 4
+UseTab: ForIndentation
+PointerAlignment: Left
+BreakBeforeBraces: Allman
+AccessModifierOffset: -4
+ColumnLimit: 120
+SortIncludes: true
